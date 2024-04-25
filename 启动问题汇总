@@ -1,0 +1,12 @@
+启动过程问题，实测有效果
+1、TypeError: Cannot use 'in' operator to search for 'port' in undefined
+    修改 node_modules/@grpc/grpc-js/build/src/load-balancer-pick-first.js的411行
+    从
+    const rawAddressList = [].concat(...endpointList.map(endpoint => endpoint.addresses));
+    改为
+    const rawAddressList = endpointList;
+出现场景：出现在第一次npm install，如果nodule_modules删除了，重新install也会
+2、出现：你正在一台新设备上使用企业微信，需通过手机企业微信扫码进行安全验证
+    第一种是扫登录的那个二维码
+    第二种是直接退出，等几分钟重新再扫码登录，可以跳过这一步(个人使用的是这个，第二次，第三次登录没有出现)
+3、
